@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+</head>
+<header>
+    <h1>Formulario de Datos</h1>
+</header>
+<body>
+    <main>
+        <!--method-Post:(Los pasa internamente, el cuerpo, no hay limite de caracteres ) y Get:(Pasa los datos por URL y se veran en la misma, no es seguro y tiene un limite de 2500 caracteres)-->
+        <!--action:(es donde se dirigen los datos)-->
+        <form action="./backend/receiver.php" method="post" id="form1">
+            <!--Etiqueta para enlazar el input-->
+            <label for="name">Nombre:</label>
+            <!--Los datos se capturan por el name-->
+            <!--Max cuando se quiere establecer un rango con numeros maxlength cuando se quiere un maximo de caracteres-->
+            <!--autocomplete on(por defecto si no coloco nada y me da sugerencias de datos pasados), off(no me da sugerencias)-->
+            <input 
+            type="text" 
+            value="" 
+            placeholder="introduzca el nombre" 
+            id="name" 
+            name="name" 
+            maxlength="15" 
+            minlength="2" 
+            title="Error en contenido"
+            autocomplete="off" 
+            spellcheck="false">
+            <label for="age">Edad:</label>
+            <input type="number" name="age" id="age" min="18" max="65">
+            <label for="mail">Correo electronico:</label>
+            <input type="email" name="mail" id="mail">
+            <label for="password">Introduzca su contraseña:</label>
+            <input type="password" name="password" id="password">
+            <label for="color">Escoja un color:</label>
+            <input type="color" name="color" id="color">
+            <label for="dateToday">Seleccione la fecha:</label>
+            <input type="date" name="dateToday" id="dateToday">
+            <label for="myfile">Adjunte el archivo</label>
+            <input type="file" name="myfile" id="myfile">
+            <hr /><br>
+            <!--Enlazado con un datalist-->
+            <label for="month">Escriba un mes:</label>
+            <input type="month" id="month" name="month" list="months">
+            <datalist id="months">
+                <option value="Enero"></option>
+                <option value="Febrero"></option>
+                <option value="Marzo"></option>
+                <option value="Abril"></option>
+            </datalist>
+            <fieldset><legend>Estado Civil</legend>
+                <input type="radio" name="estado" id="estado" value="soltero">Solter@
+                <input type="radio" name="estado" id="estado" value="casado">Casad@
+                <input type="radio" name="estado" id="estado" value="viudo">Viud@
+                <input type="radio" name="estado" id="estado" value="divorciado">Divorciad@
+            </fieldset>
+            <br>
+            <hr>
+            <label for="lenguajes">Lenguajes de programación:</label>
+            <select name="lenguajes" id="lenguajes">
+                <optgroup label="Backend">
+                <option value="java">Java</option>
+                <option value="php">PHP</option>
+            </optgroup>
+            <optgroup label="Frontend">
+                <option value="js">JavaScript</option>
+                <option value="tjs">TypeScript</option>
+            </optgroup>
+            </select>
+            <label for="condiciones">¿Acepta los terminos y condiciones?</label>
+            <input type="checkbox" name="condiciones" id="condiciones"><br>
+            <hr>
+            <input type="button" value="Botón 1">
+            <input type="submit" value="Enviar datos" id="forma1">
+            <button type="submit" id="forma2">Enviar data</button>
+        </form>
+    </main> 
+    <script src="./script/main.js"></script>
+</body>
+</html>
